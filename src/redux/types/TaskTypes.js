@@ -1,0 +1,21 @@
+export const TASK_TYPE = 'TASK_TYPE'
+export const GET_TASK_TYPE = 'GET_TASK_TYPE'
+
+export const ASSIGN_USER_TASK = 'ASSIGN_USER_TASK'
+export const POST_ASSIGN_USER_TASK = 'POST_ASSIGN_USER_TASK'
+
+export const CREATE_TASK = 'CREATE_TASK'
+
+export const UPDATE_STATUS = 'UPDATE_STATUS'
+
+export const TASK_DETAIL = 'TASK_DETAIL'
+export const GET_TASK_DETAIL = 'GET_TASK_DETAIL'
+
+export const EDIT_TASK = 'EDIT_TASK'
+export const UPDATE_TASK = 'UPDATE_TASK'
+export const DELETE_TASK = 'DELETE_TASK'
+
+export const ADD_ASIGNESS = 'ADD_ASIGNESS'
+export const DELETE_ASIGNESS = 'DELETE_ASIGNESS'
+
+export const CLOSE_MODAL = 'CLOSE_MODAL'

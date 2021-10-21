@@ -1,0 +1,29 @@
+.info__task {
+    h3{
+        font-size: 2rem;
+        font-weight: bold;
+    }
+    .info__task-content{
+        display: flex;
+        align-items: center;
+        .task__input{
+            width: 15%;
+        }
+        .task__avatar{
+            display: flex;
+            margin:0 3rem;
+            .avatar{
+                width: 50px;
+                img{
+                    border-radius: 50%;
+                }
+            }
+        }
+        .task-item{
+            span{
+                font-size: 1.25rem;
+                margin-right: 1rem;
+            }
+        }
+    }
+}

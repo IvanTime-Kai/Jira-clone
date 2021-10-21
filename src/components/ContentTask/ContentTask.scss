@@ -1,0 +1,52 @@
+.content{
+    margin-top: 3rem;
+    .card {
+        margin-right: 10px;
+        background-color: #f4f5f7;
+        .card-header {
+            border: none;
+            background-color: transparent;
+            color: #5e6c84;
+            font-size: 1.25rem;
+        }
+        .list-group {
+            border: none;
+            .list-group-item {
+                margin: 5px;
+                p {
+                    font-size: 1.25rem;
+                }
+                .block {
+                    justify-content: space-between;
+                    .block-left {
+                        line-height: 40px;
+                        .svg-inline--fa {
+                            margin-right: 5px;
+                        }
+                        .fa-bookmark {
+                            color: #5fb03e;
+                            font-size: 1.25rem;
+                            margin-right: 10px;
+                        }   
+                        .fa-exclamation-circle{
+                            color: red;
+                            font-size: 1.25rem;
+                            margin-right: 10px;
+                        }                
+                        .fa-arrow-up {
+                            color: #d85463;
+                            font-size: 1.25rem;
+                        }  
+                        .fa-arrow-down{
+                            color: green;
+                            font-size: 1.25rem;
+                        }                    
+                        .fa-check-square {
+                            color: #62a0ce;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

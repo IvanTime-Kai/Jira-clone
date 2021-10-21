@@ -1,0 +1,44 @@
+.project__management{
+    width: 80%;
+    margin-top: 5rem;
+    h3{
+        margin: 3rem 0;
+    }
+    .ant-table-wrapper{
+        .ant-spin-nested-loading{
+            .ant-spin-container{
+                .ant-table{
+                    font-size: 16px !important;
+                    .ant-table-container{
+                        .ant-table-content{
+                            table{
+                                text-align: center;
+                                .ant-table-thead{
+                                    tr{
+                                        th{
+                                            text-align: center;
+                                        }
+                                    }
+                                }
+                                .ant-table-tbody{
+                                    tr{
+                                        td{
+                                            span{
+                                                font-size: 16px !important;
+                                            }
+                                        }
+                                        .ant-table-cell{
+                                            .ant-divider-inner-text{
+                                                display: flex;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,127 @@
+
+
+.box {
+    width: 350px;
+    height: 550px;
+    position: relative;
+    background-color: white;
+    overflow: hidden;
+    .signup{
+        padding: 0 1rem;
+        position: absolute;
+        background-color: transparent;
+        bottom: -20px;      
+        left: 0;
+        width: 100%;
+        height: 400px;
+        transition: all .5s;
+        h1{
+            font-size: 2rem;
+            text-align: center;
+        }
+        .signup-title{
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .btn-submit{
+            background-color: rgb(31, 18, 223);
+            margin-top: 1rem;
+            color: white;
+            border: 2px solid blue;
+            width: 100%;
+            padding: 1rem 0;
+            border-radius: 30px;
+            font-size: 1rem;
+            &:hover {
+                background-color: transparent;
+                border: 2px solid blue;
+                color: rgb(31, 18, 223);
+                transition: all .5s;
+            }
+        }
+        .logo__signup{
+            margin-top: 2rem;
+            display: flex;
+            font-size: 2rem;
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    
+    .register{
+        position: absolute;
+        background-color: transparent;
+        padding: 0 1rem;
+        bottom: 80px;      
+        left: 101%;
+        width: 100%;
+        height: 400px;
+        transition: all .5s;
+        h1{
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 0;
+        }
+        .register-title{
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .btn-register{
+            background-color: rgb(235, 19, 66);
+            margin-top: 1rem;
+            border: 2px solid rgb(235, 19, 66);
+            color: white;
+            width: 100%;
+            padding: 1rem 0;
+            border-radius: 30px;
+            font-size: 1rem;
+            &:hover {
+                background-color: transparent;
+                border: 2px solid rgb(235, 19, 66);
+                color: rgb(235, 19, 66);
+                transition: all .5s;
+            }
+        }
+    }
+    .toggle-btn{
+        -webkit-appearance: none;
+        width: 150px;
+        height: 40px;
+        border: 1px solid gray;
+        position: absolute;
+        top: 35px;
+        left: calc(50% - 70px);
+        border-radius: 100px;
+    }
+    .toggle-btn::before{
+        content: 'SignUp';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        background-color: black;
+        color: white;
+        border-radius: 100px;
+        display: flex;
+        place-items: center;
+        justify-content: center;
+        transition: .5s;
+    }
+    .toggle-btn:checked::before{
+        content: 'Register';
+        left: 50%;
+    }
+
+    .toggle-btn:checked + .signup{
+        left: -101%;
+        transition: .5s;
+    }
+
+    .toggle-btn:checked + .signup + .register{
+        left: 0%;
+    }
+}

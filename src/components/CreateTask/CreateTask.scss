@@ -1,0 +1,15 @@
+.task{
+    .task__item{
+        margin-bottom: 10px;
+        span{
+            font-size: 1.2rem;
+            color: rgb(28, 102, 212);
+        }
+        input{
+            margin-top: 5px;
+        }
+        .ant-select-selection-item{
+            align-items: center;
+        }
+    }
+}

@@ -1,0 +1,16 @@
+.pagenotfound{
+  background-color: black;
+  color: white;
+  height: 100vh;
+  text-align: center;
+  .pagenotfound__content{
+    padding-top: 20%;
+    span{
+      font-size: 5rem;
+    }
+    p{
+      font-size: 3rem;
+    }
+  }
+  
+}
