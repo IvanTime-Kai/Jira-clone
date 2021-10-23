@@ -1,5 +1,9 @@
+
+
+import { Task } from "assets/modal/Task"
 import { EDIT_TASK } from "redux/types/TaskTypes"
 import { DELETE_ASIGNESS } from "redux/types/TaskTypes"
+import { SEARCH_TASK_DRAWER } from "redux/types/TaskTypes"
 import { CLOSE_MODAL } from "redux/types/TaskTypes"
 import { ADD_ASIGNESS } from "redux/types/TaskTypes"
 import { GET_TASK_DETAIL } from "redux/types/TaskTypes"
@@ -7,7 +11,8 @@ import { GET_TASK_TYPE } from "redux/types/TaskTypes"
 
 const initialState = {
     taskType : [],
-    taskDetail : {},
+    taskDetail : Task,
+    taskSearch : null,
     visibleTask : true
 }
 
@@ -27,6 +32,8 @@ const TaskReducer = (state = initialState, action) => {
             return {...state}
         case CLOSE_MODAL :
             return {...state, visibleTask : false }
+        case SEARCH_TASK_DRAWER:
+            return {...state, taskSearch : action.data}
         default:
             return state
     }

@@ -5,29 +5,34 @@ import UserManagement from "pages/UserManagement/UserManagement";
 
 
 export const ClientRoutes = [
-    // {
-    //     path : '/',
-    //     Component : ProjectManagement,
-    //     exact : true,
-    // },
+    {
+        path : '/',
+        Component : ProjectManagement,
+        exact : true,
+        isPrivate : true
+    },
     {
         path : '/management',
         Component : ProjectManagement,
-        exact : true
+        exact : true,
+        isPrivate : true
     },
     {
         path : '/createproject',
         Component : CreateProject,
-        exact : false
+        exact : false,
+        isPrivate : true
     },
     {
         path : '/projectdetail/:projectId',
         Component : Task,
-        exact : false
+        exact : false,
+        isPrivate : true
     },
     {
         path : '/usermanagement',
         Component : UserManagement,
-        exact : false
+        exact : false,
+        isPrivate : true
     }
 ]

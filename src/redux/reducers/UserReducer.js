@@ -1,5 +1,6 @@
+import { TOKEN } from "utils/SettingSystem/SettingSystem"
 import { USER_LOGIN } from "utils/SettingSystem/SettingSystem"
-import { GET_ALL_USER, GET_ALL_USER_1, GET_USER_BY_PROJECT, SIGN_UP_USER } from "../types/UserTypes"
+import { GET_ALL_USER, GET_ALL_USER_1, GET_USER_BY_PROJECT, LOG_OUT, SIGN_UP_USER } from "../types/UserTypes"
 
 
 
@@ -26,6 +27,10 @@ const UserReducer = (state = intialState, action) => {
             return {...state, getUserByProject : action.data}
         case GET_ALL_USER_1 : 
             return {...state, allUser : action.data}
+        case LOG_OUT : 
+            localStorage.removeItem(USER_LOGIN)
+            localStorage.removeItem(TOKEN)
+            return {...state, userLogin : {}}
         default:
             return state
         }

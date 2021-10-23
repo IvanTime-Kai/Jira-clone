@@ -11,6 +11,7 @@ export default function Task(props) {
 
 
     const { projectEdit } = useSelector(state => state.ProjectReducer)
+    const {taskSearch} = useSelector(state => state.TaskReducer)
 
     const dispatch = useDispatch()
     useEffect(() => {
@@ -19,12 +20,13 @@ export default function Task(props) {
             data: props.match.params.projectId
         })
     }, [])
+
     return (
         <div className="main">
             <HeaderTask/>
-            <InfoTask projectDetail={projectEdit}/>
-            <ContentTask projectDetail={projectEdit.lstTask}/>
-            <Modal projectDetail={projectEdit}/>         
+            <InfoTask InfoProjectDetail={projectEdit}/>
+            <ContentTask projectDetail={ taskSearch !== null ? taskSearch.lstTask : projectEdit.lstTask }/>
+            <Modal modalProjectDetail={projectEdit}/>         
         </div>
     )
 }

@@ -10,6 +10,7 @@ import UserLogin from 'pages/UserLogin/UserLogin';
 import Loading from 'components/Loading/Loading';
 import { Suspense, lazy } from 'react';
 import PageNotFound from './pages/PageNotFound/PageNotFound';
+import { USER_LOGIN } from 'utils/SettingSystem/SettingSystem';
 
 
 const HomeTemplateLazy = lazy(() => import('./template/HomeTemplate/HomeTemplate.js'))
@@ -26,6 +27,7 @@ function App() {
         exact = {item.exact}
         path = { item.path}
         Component = {item.Component}
+        isPrivate = {item.isPrivate}
       />
     })
   }
@@ -35,13 +37,13 @@ function App() {
       <DrawerComponent/>
       <Loading/>
       <Switch>
-        <UserLoginTemplate exact path="/" Component={UserLogin}/>
+        {/* { localStorage.getItem(USER_LOGIN) ? <UserLoginTemplate exact path="/" Component={UserLogin}/> : ''} */}
         <UserLoginTemplate exact path="/userlogin" Component={UserLogin}/>
-        <Suspense fallback={<Loading/>}>
-          {renderRouter(ClientRoutes, HomeTemplateLazy)}
-          <Route path="*" component={PageNotFound}/>
-        </Suspense>
-        
+        {/* <Suspense fallback={<Loading/>}>
+          
+        </Suspense> */}
+        {renderRouter(ClientRoutes, HomeTemplate)}
+        <Route path="*" component={PageNotFound}/>
       </Switch>
     </Router>
   );

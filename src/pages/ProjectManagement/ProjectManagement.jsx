@@ -240,7 +240,7 @@ export default function ProjectManagement() {
     return (
         <div className="project__management">
             <h3 className="text-5xl text-center text-blue-600">Project Management</h3>
-            <Table columns={columns} rowKey={'key'} dataSource={allProject} onChange={handleChange}></Table>
+            <Table columns={columns} rowKey={'id'} dataSource={allProject} onChange={handleChange}></Table>
         </div>
     )
 }

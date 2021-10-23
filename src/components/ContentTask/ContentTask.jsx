@@ -14,6 +14,7 @@ export default function ContentTask(props) {
 
     const { projectDetail } = props
 
+
     const handleDragEnd = (result) => {
         const { destination, source} = result
         let draggableId = JSON.parse(result.draggableId)

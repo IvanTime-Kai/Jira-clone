@@ -1,7 +1,5 @@
-import { render } from '@testing-library/react'
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { ALL_COMMENT } from 'redux/types/CommentTypes'
 import { PRIORITY } from 'redux/types/PriorityTypes'
 import { ALL_STATUS } from 'redux/types/StatusTypes'
 import { Editor } from '@tinymce/tinymce-react'
@@ -21,7 +19,7 @@ import { DELETE_TASK } from 'redux/types/TaskTypes'
 export default function Modal(props) {
 
 
-    const { taskDetail, taskType, visibleTask } = useSelector(state => state.TaskReducer)
+    const { taskDetail, taskType } = useSelector(state => state.TaskReducer)
     const { allStatus } = useSelector(state => state.StatusReducer)
     const { priority } = useSelector(state => state.PriorityReducer)
     const { allComment } = useSelector(state => state.CommentReducer)
@@ -30,7 +28,8 @@ export default function Modal(props) {
 
 
 
-    const { projectDetail } = props
+
+    const { modalProjectDetail } = props
 
 
 
@@ -59,7 +58,6 @@ export default function Modal(props) {
         dispatch({
             type: TASK_TYPE
         })
-
     }, [])
 
     
@@ -121,14 +119,14 @@ export default function Modal(props) {
     const renderMenu = () => {
         return (
             <Menu onClick={(item) => {
-                let user = projectDetail.members.find(user => user.userId === parseInt(item.key))
+                let user = modalProjectDetail.members.find(user => user.userId === parseInt(item.key))
                 dispatch({
                     type: UPDATE_TASK,
                     actionType: ADD_ASIGNESS,
                     user
                 })
             }}>
-                {projectDetail.members?.filter(mem => {
+                {modalProjectDetail.members?.filter(mem => {
                     let index = taskDetail.assigness?.findIndex(user => user.id === mem.userId)
                     if (index !== -1) {
                         return false
@@ -156,13 +154,11 @@ export default function Modal(props) {
     // console.log('render');
 
     const handleChangeContent = (e) => {
-        let {name, value} = e.target
-
+        const {name, value} = e.target
         setContentComment({
             ...contentComment,
             [name] : value
         })
-
         console.log(contentComment.comment);
     }
 
@@ -250,8 +246,6 @@ export default function Modal(props) {
                                                                 <p style={{ marginBottom: 5 }}>
                                                                     {item.user.name} <span> - a month ago  </span>
                                                                 </p>
-
-
                                                                 { hide && item.id === idComment  ? 
                                                                 <input className="form-control" name="comment" value={contentComment.comment === '' ? item.contentComment : contentComment.comment}  onChange={handleChangeContent} ></input> :
                                                                 <p style={{ marginBottom: 5, cursor: 'pointer' }} onClick={() => {
@@ -341,10 +335,10 @@ export default function Modal(props) {
                                         <h6>REPORTER</h6>
                                         <div className="item">
                                             <div className="avatar">
-                                                <img src={`https://ui-avatars.com/api/?name=${projectDetail.creator?.name}`} alt="anh" />
+                                                <img src={`https://ui-avatars.com/api/?name=${modalProjectDetail.creator?.name}`} alt="anh" />
                                             </div>
                                             <p className="name">
-                                                {projectDetail.creator?.name}
+                                                {modalProjectDetail.creator?.name}
                                             </p>
                                         </div>
                                     </div>
@@ -358,7 +352,7 @@ export default function Modal(props) {
                                     </div>
                                     <div className="estimate">
                                         <h6>ORIGINAL ESTIMATE (HOURS)</h6>
-                                        <input name="originalEstimate" type="text" className="estimate-hours" value={taskDetail.originalEstimate} onChange={handleChange} />
+                                        <input name="originalEstimate" type="text" className="estimate-hours" value={taskDetail?.originalEstimate} onChange={handleChange} />
                                     </div>
                                     <div className="time-tracking">
                                         <h6>TIME TRACKING</h6>
@@ -366,7 +360,7 @@ export default function Modal(props) {
                                             <i className="fa fa-clock" />
                                             <div style={{ width: '100%', padding: '5px' }}>
                                                 <div className="progress">
-                                                    <div className="progress-bar" role="progressbar" style={{ width: `${Math.round((parseInt(taskDetail.timeTrackingSpent) / (parseInt(taskDetail.timeTrackingSpent) + parseInt(taskDetail.timeTrackingRemaining))) * 100)}%` }} aria-valuenow={taskDetail?.timeTrackingSpent} aria-valuemin={0} aria-valuemax={(parseInt(taskDetail?.timeTrackingSpent) + parseInt(taskDetail?.timeTrackingRemaining))} />
+                                                    <div className="progress-bar" role="progressbar" style={{ width: `${Math.round((parseInt(taskDetail?.timeTrackingSpent) / (parseInt(taskDetail?.timeTrackingSpent) + parseInt(taskDetail?.timeTrackingRemaining))) * 100)}%` }} aria-valuenow={taskDetail?.timeTrackingSpent} aria-valuemin={0} aria-valuemax={(parseInt(taskDetail?.timeTrackingSpent) + parseInt(taskDetail?.timeTrackingRemaining))} />
                                                 </div>
                                                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                                                     <p className="logged">{taskDetail?.timeTrackingSpent}h logged</p>
@@ -375,11 +369,11 @@ export default function Modal(props) {
                                                 <div className="row">
                                                     <div className="col-6">
                                                         <p>Time spent </p>
-                                                        <input name="timeTrackingSpent" value={taskDetail.timeTrackingSpent} defaultValue={0} min={0} type="number" className="form-control" onChange={handleChange} />
+                                                        <input name="timeTrackingSpent" value={taskDetail?.timeTrackingSpent} min={0} type="number" className="form-control" onChange={handleChange} />
                                                     </div>
                                                     <div className="col-6">
                                                         <p>Time remaining </p>
-                                                        <input name="timeTrackingRemaining" value={taskDetail.timeTrackingRemaining} defaultValue={0} min={0} type="number" className="form-control" onChange={handleChange} />
+                                                        <input name="timeTrackingRemaining" value={taskDetail?.timeTrackingRemaining} min={0} type="number" className="form-control" onChange={handleChange} />
                                                     </div>
                                                 </div>
                                             </div>

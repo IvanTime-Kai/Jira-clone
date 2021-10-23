@@ -21,30 +21,30 @@ const columns = [
         validate : rowData => !rowData.name ? { isValid : false, helperText : 'Name is required'} : true,},
     { 
         title : 'Email', field : 'email', sorting: false,
-        // validate : rowData => {
-        //     if(!rowData.email){
-        //         return {isValid : false, helperText : 'Email is required'}
-        //     }         
-        //     const regex = /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i;
-        //     if(rowData.email.match(regex)){
-        //         return {isValid : false, helperText : 'Email is valid'}
-        //     }
-        //     return true
-        // }
+        validate : rowData => {
+            if(!rowData.email){
+                return {isValid : false, helperText : 'Email is required'}
+            }         
+            const regex = /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i;
+            if(rowData.email.match(regex)){
+                return {isValid : false, helperText : 'Email is valid'}
+            }
+            return true
+        }
     },
     { 
         title : 'Phone', field : 'phoneNumber', sorting : false,
-        // validate : rowData => {
-        //     const vnf_regex = /((09|03|07|08|05)+([0-9]{8})\b)/g;
+        validate : rowData => {
+            const vnf_regex = /((09|03|07|08|05)+([0-9]{8})\b)/g;
 
-        //     if (!rowData.phoneNumber)
-        //         return { isValid: false, helperText: 'PhoneNumber is required' };
+            if (!rowData.phoneNumber)
+                return { isValid: false, helperText: 'PhoneNumber is required' };
 
-        //     if (!vnf_regex.test(String(rowData.phoneNumber)))
-        //         return { isValid: false, helperText: 'PhoneNumber is valid' };
+            if (!vnf_regex.test(String(rowData.phoneNumber)))
+                return { isValid: false, helperText: 'PhoneNumber is valid' };
 
-        //     return true;
-        // }
+            return true;
+        }
     }
 ]
 

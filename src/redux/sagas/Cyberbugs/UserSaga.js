@@ -6,6 +6,7 @@ import { STATUS_CODE, TOKEN, USER_LOGIN } from '../../../utils/SettingSystem/Set
 import { ADD_USER_IN_PROJECT, ALL_USER, ALL_USER_1, CREATE_USER, DELETE_USER, DELETE_USER_IN_PROJECT, GET_ALL_USER, GET_ALL_USER_1, GET_USER_BY_PROJECT, SIGN_UP_USER, UPDATE_USER, USER_BY_PROJECT, USER_SIGN_IN_API } from '../../types/UserTypes'
 import { GET_ALL_PROJECT } from 'redux/types/ProjectTypes'
 import { ALL_PROJECT } from 'redux/types/ProjectTypes'
+import Swal from "sweetalert2"
 
 
 
@@ -20,6 +21,13 @@ function * actSignIn(action){
             yield put({
                 type : SIGN_UP_USER,
                 data : data.content
+            })
+
+            yield Swal.fire({
+                icon: 'success',
+                title: 'Login Sucessful',
+                showConfirmButton: false,
+                timer: 1500
             })
 
             history.push('/management')
@@ -85,6 +93,7 @@ function * GetUserByProjectIdApi(action){
         }
     }catch(err){
         console.log(err.response.data)
+        openNotificationWithIcon('error', 'Notification', `${err.response.data.content}`) 
     }
 }
 
@@ -113,6 +122,7 @@ function * CreateUserApi(action){
         }
     }catch(err){
         console.log(err.response.data)
+        openNotificationWithIcon('error', 'Notification', `${err.response.data.content}`)
     }
 }
 function * UpdateUserApi(action){
@@ -126,6 +136,7 @@ function * UpdateUserApi(action){
         }
     }catch(err){
         console.log(err.response.data)
+        openNotificationWithIcon('error', 'Notification', `${err.response.data.content}`)
     }
 }
 function * DeleteUserApi(action){
@@ -139,6 +150,7 @@ function * DeleteUserApi(action){
         }
     }catch(err){
         console.log(err.response.data)
+        openNotificationWithIcon('error', 'Notification', `${err.response.data.content}`)
     }
 }
 

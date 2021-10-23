@@ -25,8 +25,7 @@ const UserLoginTemplate = (props) => {
             <Layout className="d-flex">
                 <Sider width={state.width/2} style={{height: state.height, backgroundImage : 'url(https://picsum.photos/0508)', backgroundRepeat: 'no-repeat', backgroundSize : 'cover'}}></Sider>
                 <Content className="d-flex " style={{justifyContent: 'center', alignItems: 'center'}}>
-                
-                <Component {...propsRouter}/> 
+                    <Component {...propsRouter}/> 
                 </Content>             
             </Layout>           
         )

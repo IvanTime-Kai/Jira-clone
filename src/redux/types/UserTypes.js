@@ -19,3 +19,5 @@ export const GET_ALL_USER_1 = 'GET_ALL_USER_1'
 export const CREATE_USER = 'CREATE_USER'
 export const DELETE_USER = 'DELETE_USER'
 export const UPDATE_USER = 'UPDATE_USER'
+
+export const LOG_OUT = 'LOG_OUT'

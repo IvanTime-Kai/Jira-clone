@@ -1,17 +1,19 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Drawer } from 'antd'
 import { useSelector, useDispatch } from 'react-redux'
 import { CLOSE_DRAWER } from 'redux/types/ProjectTypes'
 import './Drawer.scss'
 
 export default function DrawerComponent() {
-    const { visible, Component, onSubmit, title } = useSelector(state => state.DrawerReducer)
+    const { visible, placement, Component, onSubmit, title } = useSelector(state => state.DrawerReducer)
     const dispatch = useDispatch()
+
+    
     return (
         <Drawer
             title={title}
             width={700}
-            placement='right'
+            placement={placement}
             closable={true}
             onClose={() => {
                 dispatch({

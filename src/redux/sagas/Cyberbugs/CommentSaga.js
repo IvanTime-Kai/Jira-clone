@@ -41,6 +41,7 @@ function * PostInsertCommentApi(action){
         }
     }catch(err){
         console.log(err.response.data)
+        openNotificationWithIcon('error', 'Notification', `${err.response.data.content}`)
     }
 }
 
@@ -57,7 +58,7 @@ function * PutUpdateCommentApi(action){
         }
     }catch(err){
         console.log(err.response?.data)
-        // openNotificationWithIcon('error', 'Notification', `${err.response.data.content}`) 
+        openNotificationWithIcon('error', 'Notification', `${err.response.data.content}`) 
     }
 }
 
@@ -77,6 +78,7 @@ function * DeleteCommentApi(action){
         }
     }catch(err){
         console.log(err.response.data)
+        openNotificationWithIcon('error', 'Notification', `${err.response.data.content}`)
     }
 }
 
