@@ -76,7 +76,7 @@ export default function SideBar(props) {
                 }}>
                     Create issue
                 </Menu.Item>
-                <Menu.Item key="2" icon={<SearchOutlined style={{ fontSize: '25px' }} />} onClick={() => {
+                {/* <Menu.Item key="2" icon={<SearchOutlined style={{ fontSize: '25px' }} />} onClick={() => {
                     dispatch({
                         type : SEARCH_TASK_DRAWER,
                         data : {
@@ -86,16 +86,9 @@ export default function SideBar(props) {
                     })
                 }}>
                     Search
-                </Menu.Item>
+                </Menu.Item> */}
                 { localStorage.getItem(USER_LOGIN) ?
-                <Menu.Item  style={{ position: 'absolute', bottom: '3rem' }} key="3" icon={<img className="rounded-full" style={{height : '30px'}} src={userLogin.avatar} alt="avatar"/>} onClick={() => {
-                    // dispatch({
-                    //     type : EDIT_PROJECT_DRAWER,
-                    //     title : 'Create Task',
-                    //     visible : true,
-                    //     data : <CreateTask/>
-                    // })
-                }}>
+                <Menu.Item  style={{ position: 'absolute', bottom: '3rem' }} key="3" icon={<img className="rounded-full" style={{height : '30px'}} src={userLogin.avatar} alt="avatar"/>} >
                     <Dropdown overlay={menu} placement="topCenter" arrow>
                         <span>{userLogin.name}</span>
                     </Dropdown>
