@@ -4,6 +4,7 @@ import { Layout } from "antd";
 import Menu from "components/Menu/Menu.jsx";
 import SideBar from "components/SideBar/SideBar";
 import { USER_LOGIN } from "utils/SettingSystem/SettingSystem";
+import { Content } from "antd/lib/layout/layout";
 
 
 
@@ -28,10 +29,11 @@ const HomeTemplate = (props) => {
 
     return <Route {...restParams} render={(propsRoute) => {
         return (
-            <Layout>
+            <Layout className="d-flex" style={{flexDirection: 'row'}}>
                 <SideBar/>
                 <Menu/>
                 <Component {...propsRoute} />
+            
             </Layout>
         )
     }}></Route>

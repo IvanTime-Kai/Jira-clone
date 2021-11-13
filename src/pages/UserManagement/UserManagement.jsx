@@ -67,7 +67,7 @@ export default function UserManagement() {
     }, [])
     return (
         <MaterialTable
-            style={{width : '80%', paddingTop: '5rem', fontSize : '16px'}}
+            style={{with: '100%', fontSize : '16px',  marginBottom: '10%',position: 'relative'}}
             className='user__management'
             icons={tableIcons}
             title = {<h3 className="text-5xl text-blue-600 pb-3">User Management</h3>}

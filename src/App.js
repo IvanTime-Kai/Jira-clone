@@ -3,6 +3,7 @@ import './App.css';
 import 'antd/dist/antd.css';
 import { createBrowserHistory } from 'history';
 import UserLoginTemplate from './template/LoginTemplate/UserLoginTemplate';
+import CyberBugsTempalte from 'template/CyberBugsTemplate/CyberBugsTemplate';
 import HomeTemplate from 'template/HomeTemplate/HomeTemplate';
 import DrawerComponent from 'components/Drawer/Drawer,';
 import { ClientRoutes } from 'routes';
@@ -10,7 +11,7 @@ import UserLogin from 'pages/UserLogin/UserLogin';
 import Loading from 'components/Loading/Loading';
 import { Suspense, lazy } from 'react';
 import PageNotFound from './pages/PageNotFound/PageNotFound';
-import { USER_LOGIN } from 'utils/SettingSystem/SettingSystem';
+import indexCyberBugs from 'redux/sagas/Cyberbugs/indexCyberBugs';
 
 
 const HomeTemplateLazy = lazy(() => import('./template/HomeTemplate/HomeTemplate.js'))
@@ -27,7 +28,6 @@ function App() {
         exact = {item.exact}
         path = { item.path}
         Component = {item.Component}
-        isPrivate = {item.isPrivate}
       />
     })
   }
@@ -37,13 +37,15 @@ function App() {
       <DrawerComponent/>
       <Loading/>
       <Switch>
-        {/* { localStorage.getItem(USER_LOGIN) ? <UserLoginTemplate exact path="/" Component={UserLogin}/> : ''} */}
+        <CyberBugsTempalte exact path="/cyberbugs" Component={indexCyberBugs}/>
+        <UserLoginTemplate exact path="/" Component={UserLogin}/>
         <UserLoginTemplate exact path="/userlogin" Component={UserLogin}/>
-        {/* <Suspense fallback={<Loading/>}>
-          
-        </Suspense> */}
-        {renderRouter(ClientRoutes, HomeTemplate)}
-        <Route path="*" component={PageNotFound}/>
+       
+        <Suspense fallback={<Loading/>}>
+          {renderRouter(ClientRoutes, HomeTemplateLazy)}
+          <Route path="*" component={PageNotFound}/>
+        </Suspense>
+       
       </Switch>
     </Router>
   );

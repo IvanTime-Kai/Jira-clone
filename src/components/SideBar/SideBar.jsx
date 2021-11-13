@@ -61,11 +61,11 @@ export default function SideBar(props) {
     );
 
     return (
-        <Sider trigger={null} collapsible collapsed={state.collapsed} style={{ height: '100vh', position: 'relative' }}>
-            <div className="text-white text-center" style={{ cursor: 'pointer', fontSize: '30px' }} onClick={toggle}>
-                <BarsOutlined />
+        <div className="sideBar" trigger={null} collapsible collapsed={state.collapsed}>
+            <div className="sideBar-top text-center" style={{ cursor: 'pointer' }} onClick={toggle}>
+                <img  className="sideBar-icon" src="./jira.png" alt="./jira.png" />
             </div>
-            <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
+            <Menu mode="inline" defaultSelectedKeys={['1']}>
                 <Menu.Item key="1" icon={<PlusOutlined style={{ fontSize: '25px' }} />} onClick={() => {
                     dispatch({
                         type: EDIT_PROJECT_DRAWER,
@@ -98,6 +98,6 @@ export default function SideBar(props) {
                 </Menu.Item>
                 }
             </Menu>
-        </Sider>
+        </div>
     )
 }

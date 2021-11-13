@@ -6,14 +6,14 @@ import './Menu.scss'
 export default function Menu() {
     return (
         <div className="menu">
-            <div className="menu__logo">
+            {/* <div className="menu__logo">
                 <i className="fab fa-jira"></i>
-            </div>
+            </div> */}
             <div className="menu__content">
-                <div className="menu__content-item" style={{cursor: 'no-drop !important'}}>
+                <NavLink className="menu__content-item text-black" to="/cyberbugs">
                     <i className="fa fa-credit-card" />
                     <p>Cyber board</p>
-                </div>
+                </NavLink>
                 <NavLink className="menu__content-item text-black" to="/management">
                     <i className="fa fa-credit-card" />
                     <p>Cyber Manager</p>

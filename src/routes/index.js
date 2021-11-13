@@ -2,6 +2,7 @@ import CreateProject from "pages/Project/CreateProject";
 import ProjectManagement from "pages/ProjectManagement/ProjectManagement";
 import Task from "pages/Task/Task";
 import UserManagement from "pages/UserManagement/UserManagement";
+import indexCyberBugs from "redux/sagas/Cyberbugs/indexCyberBugs";
 
 
 export const ClientRoutes = [
@@ -34,5 +35,12 @@ export const ClientRoutes = [
         Component : UserManagement,
         exact : false,
         isPrivate : true
+    },
+    {
+        path : '/cyberbugs',
+        Component : indexCyberBugs,
+        exact : true,
+        isPrivate : false
     }
+
 ]
