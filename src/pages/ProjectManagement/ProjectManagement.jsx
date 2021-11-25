@@ -132,13 +132,13 @@ export default function ProjectManagement() {
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td>{item.userId}</td>
-                                                    <td>
-                                                        <img src={item.avatar} alt="avatar" width={40} className="rounded-full" />
+                                                <tr >
+                                                    <td className="text-left">{item.userId}</td>
+                                                    <td className="text-left">
+                                                        <img src={item.avatar} alt="avatar" width={30} className="rounded-full" />
                                                     </td>
-                                                    <td>{item.name}</td>
-                                                    <td>
+                                                    <td className="text-left">{item.name}</td>
+                                                    <td className="text-left">
                                                         <button className="btn btn-danger" onClick={() => {
                                                             dispatch({
                                                                 type : DELETE_USER_IN_PROJECT,
@@ -196,9 +196,10 @@ export default function ProjectManagement() {
                                     />
                                 </div>
                             }>
-                                <Button shape="circle" size="large">
+                                {/* <Button shape="circle" size="large">
                                     <i className="fa fa-user-plus"></i>
-                                </Button>
+                                </Button> */}
+                                <i type="button" className="fa fa-user-plus"></i>
                             </Popover>
                         </Divider>
                     </div>
@@ -211,7 +212,7 @@ export default function ProjectManagement() {
             render: (text, record, index) => {
                 return (
                     <div key={index} className="action">
-                        <button className="btn btn-primary mr-2" onClick={() => {
+                        <button className="btn btn-primary " onClick={() => {
                             dispatch({
                                 type : EDIT_PROJECT_DRAWER,
                                 data : <EditProject/>,
@@ -222,15 +223,15 @@ export default function ProjectManagement() {
                                 type : EDIT_PROJECT,
                                 data : record
                             })
-                        }}><i className="fa fa-edit"></i></button>
-                        <Popconfirm title="Are you sure?" icon={<QuestionCircleOutlined style={{ color: 'red' }}/>} onConfirm={(e) => {
+                        }}><i className="fa fa-edit action__edit"></i></button>
+                        <Popconfirm style={{minWidth: '140px'}} title="Are you sure?" icon={<QuestionCircleOutlined style={{ color: 'red' }}/>} onConfirm={(e) => {
                             e.preventDefault();
                             dispatch({
                                 type : DELETE_PROJECT,
                                 data :record.id
                             })
                         }}>
-                            <button className="btn btn-danger ml-2"><i className="fa fa-trash"></i></button>
+                            <button className="btn btn-danger"><i className="fa fa-trash action__delete"></i></button>
                         </Popconfirm>
                     </div>
                 )

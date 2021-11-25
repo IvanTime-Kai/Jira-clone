@@ -1,17 +1,27 @@
-.project{
-    
+.project {
+    width: 100%;
     padding-bottom: 10%;
-   
-    .project__title{
-        h3{
+    margin-left: 22%;
+    .project__title {
+        h3 {
             font-size: 3rem;
         }
     }
-    .project__content{
-        
-        .form-group{
-            p{
+    .project__content {
+        .form-group {
+            p {
                 font-size: 1.3rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .project {
+        margin-left: 12%;
+        .project__title {
+            h3 {
+                font-size: 2rem;
             }
         }
     }

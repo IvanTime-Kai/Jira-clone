@@ -1,8 +1,16 @@
 .main{
     background-color: white;
-    width: 80%;
+    width: 100%;
     padding-left: 5rem;
     padding-top: 3rem;
+    margin-left: 22%;
     
+    
+}
+@media screen and (max-width: 768px) {
+    .main{
+        margin-left: 12%;
+        padding-left: 1rem;
+    }
     
 }

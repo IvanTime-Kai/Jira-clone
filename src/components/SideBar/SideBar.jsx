@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Layout, Menu, Dropdown } from 'antd';
+import './SideBar.scss'
 import {
     BarsOutlined,
     PlusOutlined,
@@ -30,15 +31,15 @@ export default function SideBar(props) {
     })
 
 
-    const {userLogin} = useSelector(state => state.UserReducer)
+    const { userLogin } = useSelector(state => state.UserReducer)
 
     const dispatch = useDispatch()
 
-    const toggle = () => {
-        setState({
-            collapsed: !state.collapsed,
-        });
-    };
+    // const toggle = () => {
+    //     setState({
+    //         collapsed: !state.collapsed,
+    //     });
+    // };
 
     const menu = (
         <Menu>
@@ -50,7 +51,7 @@ export default function SideBar(props) {
             <Menu.Item key="2">
                 <a target="_blank" rel="noopener noreferrer" href="https://www.aliyun.com" onClick={() => {
                     dispatch({
-                        type : LOG_OUT
+                        type: LOG_OUT
                     })
                     history.push('/userlogin')
                 }} >
@@ -62,11 +63,11 @@ export default function SideBar(props) {
 
     return (
         <div className="sideBar" trigger={null} collapsible collapsed={state.collapsed}>
-            <div className="sideBar-top text-center" style={{ cursor: 'pointer' }} onClick={toggle}>
-                <img  className="sideBar-icon" src="./jira.png" alt="./jira.png" />
+            <div className="sideBar-top text-center" style={{ cursor: 'pointer' }} >
+                <img className="sideBar-icon" src="../jira.png" alt="./logo.png" />
             </div>
             <Menu mode="inline" defaultSelectedKeys={['1']}>
-                <Menu.Item key="1" icon={<PlusOutlined style={{ fontSize: '25px' }} />} onClick={() => {
+                <Menu.Item style={{ padding: '0' }} key="1" onClick={() => {
                     dispatch({
                         type: EDIT_PROJECT_DRAWER,
                         title: 'Create Task',
@@ -74,7 +75,11 @@ export default function SideBar(props) {
                         data: <CreateTask />
                     })
                 }}>
-                    Create issue
+                    <div className="icon-ant">
+                       <span><PlusOutlined  /></span> 
+                    </div>
+
+                    <p>Create issue</p>
                 </Menu.Item>
                 {/* <Menu.Item key="2" icon={<SearchOutlined style={{ fontSize: '25px' }} />} onClick={() => {
                     dispatch({
@@ -87,15 +92,16 @@ export default function SideBar(props) {
                 }}>
                     Search
                 </Menu.Item> */}
-                { localStorage.getItem(USER_LOGIN) ?
-                <Menu.Item  style={{ position: 'absolute', bottom: '3rem' }} key="3" icon={<img className="rounded-full" style={{height : '30px'}} src={userLogin.avatar} alt="avatar"/>} >
-                    <Dropdown overlay={menu} placement="topCenter" arrow>
-                        <span>{userLogin.name}</span>
-                    </Dropdown>
-                </Menu.Item> : 
-                <Menu.Item  style={{ position: 'absolute', bottom: '3rem' }} key="3" icon={<UserOutlined style={{fontSize: '25px'}} />}>
-                    Login
-                </Menu.Item>
+                {localStorage.getItem(USER_LOGIN) ?
+                    <Menu.Item style={{ position: 'absolute', bottom: '3rem',padding: '3px'}} key="3"  >
+                        <img className="rounded-full" style={{ height: '30px' }} src={userLogin.avatar} alt="avatar" />
+                        <Dropdown overlay={menu} placement="topCenter" arrow>
+                            <span className="name__user">{userLogin.name}</span>
+                        </Dropdown>
+                    </Menu.Item> :
+                    <Menu.Item  style={{ position: 'absolute', bottom: '3rem' }} key="3" icon={<UserOutlined style={{ fontSize: '25px' }} />}>
+                        Login
+                    </Menu.Item>
                 }
             </Menu>
         </div>

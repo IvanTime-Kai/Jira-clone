@@ -7,7 +7,7 @@
         display: flex;
         align-items: center;
         .task__input{
-            width: 15%;
+            width: 25%;
         }
         .task__avatar{
             display: flex;
@@ -26,4 +26,28 @@
             }
         }
     }
+}
+@media  screen and (max-width: 768px) {
+    .info__task{
+        h3{
+            font-size: 1.5rem;
+
+        }
+        .info__task-content{
+            display: block;
+            .task__input{
+                width: 60%;
+            }
+            .task__avatar{
+                margin: 5px 1rem;
+            }
+            .task-item{
+                span{
+                    font-size: 0.75rem;
+                }
+         
+            }
+        
+    }
+}
 }

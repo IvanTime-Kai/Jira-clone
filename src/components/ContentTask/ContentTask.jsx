@@ -36,12 +36,14 @@ export default function ContentTask(props) {
     }
 
     return (
-        <div className="content" style={{ display: 'flex' }}>
+        
+        <div className="content row p-2 " style={{ display: 'flex' }}>
             <DragDropContext onDragEnd={(result) => handleDragEnd(result)}>
                 {projectDetail?.map((task, index) => {
                     return <Droppable droppableId={task.statusId} key={index}>
                             {(provided) => {
-                                return <div className="card" style={{ width: '25%', height: 'auto' }} >
+                                return <div className="col-sm-6 col-lg-3 p-0 pb-1">
+                                         <div className="card  " style={{height: 'auto' }} >
                                         <div className="card-header">
                                             {task.statusName}
                                         </div>
@@ -98,11 +100,13 @@ export default function ContentTask(props) {
                                             {provided.placeholder}
                                         </div>
                                     </div>
+                                    </div>
                             }}
                         </Droppable>
                 })}
             </DragDropContext>
         </div>
+        
     )
 }
 

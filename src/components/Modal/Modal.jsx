@@ -166,7 +166,8 @@ export default function Modal(props) {
         <div className="modal fade" id="infoModal" tabIndex={-1} role="dialog" aria-labelledby="infoModal" aria-hidden="true">
             <div className="modal-dialog modal-info">
                 <div className="modal-content">
-                    <div className="modal-header">
+                    <div className="modal-header row">
+                        <div className="col-md-6">
                         <div className="task-title d-flex items-center">
                             { taskDetail.taskTypeDetail?.taskType === 'bug ' ? <i className="fa fa-bookmark" /> : <i className="fa fa-exclamation-circle"></i>}
                             <select name="typeId" className=" mx-3" value={taskDetail.typeId} onChange={handleChange}>
@@ -176,14 +177,16 @@ export default function Modal(props) {
                             </select>
                             <span>{taskDetail?.taskName}</span>
                         </div>
+                        </div>
+                        <div className="col-md-6">
                         <div style={{ display: 'flex' }} className="task-click">
                             <div>
                                 <i className="fab fa-telegram-plane" />
-                                <span style={{ paddingRight: 20 }}>Give feedback</span>
+                                <span>Give feedback</span>
                             </div>
                             <div>
                                 <i className="fa fa-link" />
-                                <span style={{ paddingRight: 20 }}>Copy link</span>
+                                <span>Copy link</span>
                             </div>
                             <i className="fa fa-trash-alt" style={{ cursor: 'pointer' }} onClick={() => {
                                 dispatch({
@@ -199,11 +202,12 @@ export default function Modal(props) {
                                 <span aria-hidden="false">×</span>
                             </button>
                         </div>
+                        </div>
                     </div>
                     <div className="modal-body">
                         <div className="container-fluid">
                             <div className="row">
-                                <div className="col-8">
+                                <div className="col-md-8">
                                     <p className="issue">This is an issue of type: Task.</p>
                                     <div className="description">
                                         <p>Description</p>
@@ -288,7 +292,7 @@ export default function Modal(props) {
                                         })}
                                     </div>
                                 </div>
-                                <div className="col-4">
+                                <div className="col-md-4">
                                     <div className="status">
                                         <h6>STATUS</h6>
                                         <select name="statusId" className="custom-select" value={taskDetail?.statusId} onChange={handleChange} >

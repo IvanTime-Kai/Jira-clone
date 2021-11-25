@@ -13,3 +13,33 @@
         }
     }
 }
+@media screen and (max-width: 678px) {
+    .task{
+        .task__item{
+            span{
+                font-size: 1rem;
+            }
+            .time__tracking{
+                span{
+                    font-size: 0.8rem;
+                }
+            }
+        }
+      
+  
+    }
+}
+
+@media screen and (max-width: 410px) {
+    .task{
+        .task__item{
+            .time__tracking{
+                span{
+                    font-size: 0.6rem;
+                }
+            }
+        }
+      
+  
+    }
+}

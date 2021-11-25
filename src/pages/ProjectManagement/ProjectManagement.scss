@@ -1,36 +1,44 @@
-.project__management{
-  
+.project__management {
     padding-bottom: 10%;
-
-    h3{
+    margin-left: 22%;
+    width: 100%;
+    h3 {
         margin: 3rem 0;
     }
-    .ant-table-wrapper{
-        .ant-spin-nested-loading{
-            .ant-spin-container{
-                .ant-table{
+    .ant-table-wrapper {
+        .ant-spin-nested-loading {
+            .ant-spin-container {
+                .ant-table {
                     font-size: 16px !important;
-                    .ant-table-container{
-                        .ant-table-content{
-                            table{
+                    min-width: 100%;
+                    .ant-table-container {
+                        .ant-table-content {
+                            table {
                                 text-align: center;
-                                .ant-table-thead{
-                                    tr{
-                                        th{
+                                .ant-table-thead {
+                                    tr {
+                                        th {
                                             text-align: center;
                                         }
                                     }
                                 }
-                                .ant-table-tbody{
-                                    tr{
-                                        td{
-                                            span{
-                                                font-size: 16px !important;
+                                .ant-table-tbody {
+                                    tr {
+                                        td {
+                                           
+                                            span {
+                                                font-size: 16px ;
                                             }
                                         }
-                                        .ant-table-cell{
-                                            .ant-divider-inner-text{
+                                        .ant-table-cell {
+                                            .action{
+                                                .btn{
+                                                   margin-left: 15px;
+                                                }
+                                            }
+                                            .ant-divider-inner-text {
                                                 display: flex;
+                                                align-items: center;
                                             }
                                         }
                                     }
@@ -39,6 +47,213 @@
                         }
                     }
                 }
+            }
+        }
+    }
+}
+@media screen and (max-width: 1200px){
+    .project__management {
+        .ant-table-wrapper {
+           
+            .ant-spin-nested-loading {
+                .ant-spin-container {
+                    .ant-table {
+                        font-size: 10px !important;
+                       
+                        .ant-table-container {
+                            .ant-table-content {
+                                table {
+                                    text-align: center;
+                                    .ant-table-thead {
+                                        tr {
+                                            th {
+                                                text-align: left;
+                                            }
+                                        }
+                                        .ant-table-cell{
+                                            padding: 10px 0;
+                                        }
+                                        .ant-table-cell:first-child{
+                                            padding-left: 8px;
+                                        }
+                                    }
+                                    .ant-table-tbody {
+                                        text-align: left;
+                                        tr {
+                                            td {
+                                               padding: 10px 0;
+                                                span {
+                                                    font-size: 10px ;
+                                                }
+                                            }
+                                            .ant-table-cell {
+                                        
+                                                .action{
+                                                    .btn{
+                                                        position: relative;
+                                                        margin-left: 5px;
+                                                        width: 20px;
+                                                        height: 20px;
+                                                        .action__edit{
+                                                            position: absolute;
+                                                            font-size: 10px;
+                                                            top: 5px;
+                                                            left: 7px;
+                                                            
+                                                        }
+                                                        .action__delete{
+                                                            position: absolute;
+                                                            font-size: 10px;
+                                                            top: 5px;
+                                                            left: 7px;
+                                                        }
+
+                                                    }
+                                                }
+                                                .ant-divider-inner-text {
+                                                    display: flex;
+                                                    .ant-avatar{
+                                                        width: 20px;
+                                                        height: 20px;
+                                                        line-height: 17px;
+                                                       i{
+                                                           padding-top: 4px;
+                                                       }
+                                                    }
+                                                }
+                                            }
+                                            .ant-table-cell:first-child{
+                                                padding-left: 8px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+  
+}
+.ant-popover{
+    min-width: 140px;
+}
+@media screen and (max-width: 768px) {
+    .project__management{
+        margin-left: 12%;
+        h3{
+            font-size: 25px;
+        }
+  }
+}
+@media screen and (max-width: 464px){
+    .project__management{
+        margin-left: 12%;
+        .ant-table-wrapper {
+            overflow-x: auto;
+            .ant-spin-nested-loading {
+                .ant-spin-container {
+                    .ant-table {
+                        font-size: 7px !important;
+                        min-width: 100%;
+                        .ant-table-container {
+                            .ant-table-content {
+                                table {
+                                    text-align: center;
+                                    .ant-table-thead {
+                                        tr {
+                                            th {
+                                                text-align: left;
+                                            }
+                                        }
+                                    }
+                                    .ant-table-tbody {
+                                        text-align: left;
+                                        tr {
+                                            td {
+                                               padding: 0;
+                                                span {
+                                                    font-size: 7px ;
+                                                }
+                                            }
+                                            .ant-table-cell {
+                                                .ant-tag{
+                                                    margin-right: 0;
+                                                    padding: 0 ;
+                                                }
+                                                .action{
+                                                    .btn{
+                                                        position: relative;
+                                                        margin-left: 0;
+                                                        width: 5px;
+                                                        height: 10px;
+                                                        .action__edit{
+                                                            position: absolute;
+                                                            font-size: 8px;
+                                                            top: 2px;
+                                                            left: 8px;
+                                                            
+                                                        }
+                                                        .action__delete{
+                                                            font-size: 8px;
+                                                            top: 2px;
+                                                            left: 8px;
+                                                        }
+
+                                                    }
+                                                }
+                                                .ant-divider-inner-text {
+                                                    display: flex;
+                                                    .ant-avatar{
+                                                        width: 15px;
+                                                        height: 15px;
+                                                        line-height: 14px;
+                                                       i{
+                                                           padding-top: 4px;
+                                                       }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}
+@media screen and (max-width: 354px) 
+{
+    .ant-table-cell {
+        .ant-tag{
+            margin-right: 0;
+            padding: 0 ;
+        }
+        .action{
+            .btn{
+                position: relative;
+                margin:0 0 2px 0;
+                width: 5px;
+                height: 5px;
+                .action__edit{
+                    position: absolute;
+                    font-size: 8px;
+                    top: 2px;
+                    left: 8px;
+                    
+                }
+                .action__delete{
+                    font-size: 8px;
+                    top: 2px;
+                    left: 8px;
+                }
+
             }
         }
     }

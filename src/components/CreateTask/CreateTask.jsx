@@ -140,15 +140,15 @@ function CreateTask(props) {
                 <span>Time tracking</span>
                 <Slider className="form-control" value={time.timeTrackingSpent} max={parseInt(time.timeTrackingSpent) + parseInt(time.timeTrackingRemaining)} onChange={handleChange} />
                 <div className="row">
-                    <div className="col-6 text-left font-weight-bold">
+                    <div className="col-5 pr-0 text-left font-weight-bold time__tracking">
                         <span>{time.timeTrackingSpent}h logged</span>
                     </div>
-                    <div className="col-6 text-right font-weight-bold">
+                    <div className="col-7 pl-0 text-right font-weight-bold time__tracking">
                         <span>{time.timeTrackingRemaining}h remaining</span>
                     </div>
                 </div>
-                <div className="row">
-                    <div className="col-6">
+                <div className="row time__input">
+                    <div className="col-sm-6">
                         <p>Time spent </p>
                         <input type="number" defaultValue="0" min="0" name="timeTrackingSpent" className="form-control" onChange={(e) => {
                             setTime({
@@ -158,7 +158,7 @@ function CreateTask(props) {
                             setFieldValue('timeTrackingSpent', e.target.value)
                         }} />
                     </div>
-                    <div className="col-6">
+                    <div className="col-sm-6">
                         <p>Time remaining </p>
                         <input type="number" defaultValue="0" min="0" name="timeTrackingRemaining" className="form-control" onChange={(e) => {
                             setTime({

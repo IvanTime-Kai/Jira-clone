@@ -1,0 +1,176 @@
+.sideBar {
+    position: fixed;
+    height: 100vh;
+    z-index: 100;
+    background-color: #065fd4;
+    width: 6%;
+    transition: 0.2s;
+    p{
+        display: none;
+    }
+    .icon-ant{
+        margin: 0 25%;
+        span{
+            font-size: 25px;
+           
+            width: 100%;
+        }
+       
+    }
+    .rounded-full{
+     
+        height: 30px;
+        margin: 0 auto;
+
+    }
+    .name__user{
+        display:  none;
+    }
+  }
+  .sideBar:hover {
+    width: 30%;
+    span{
+        display: flex;
+    }
+    .icon-ant{
+        margin: 0 10px;
+        span{
+            margin: 50%;
+        }
+    }
+    p{
+        display: inline;
+        margin: auto 10px;
+    }
+    .rounded-full{
+        margin: 5px 0;
+    }
+    .name__user{
+        display: inline;
+        padding-left: 10px;
+    }
+   
+  }
+  
+  .sideBar:hover .sideBar-top .sideBar-icon:first-child {
+    padding: 0 40%;
+  }
+  
+  .sideBar:hover .sideBar-top .sideBar-icon:not(:first-child) {
+    padding: 0;
+    padding-left: 5%;
+  }
+  
+  .sideBar:hover .sideBar-top .sideBar-icon:not(:first-child) .title {
+    opacity: 1;
+    color: white;
+    font-weight: 500;
+  }
+  
+  .sideBar:hover .sideBar-top .sideBar-icon:not(:first-child) .svg-inline--fa {
+    margin-right: 10px;
+  }
+  
+  .sideBar:hover .sideBar-bottom {
+    left: 0%;
+    width: 100%;
+  }
+  
+  .sideBar:hover .sideBar-bottom .svg-inline--fa {
+    margin-right: 10px;
+  }
+  
+  .sideBar:hover .sideBar-bottom .title {
+    opacity: 1;
+    color: white;
+    font-weight: 500;
+  }
+  
+  .sideBar .sideBar-icon {
+    margin-bottom: 20%;
+  }
+  
+  .sideBar .sideBar-icon .svg-inline--fa {
+    color: white;
+  }
+  
+  .sideBar .sideBar-icon .title {
+    opacity: 0;
+  }
+  
+  .sideBar .sideBar-top .sideBar-icon:first-child {
+    padding-top: 20%;
+    font-size: 25px;
+  }
+  
+  .sideBar .sideBar-bottom {
+    position: absolute;
+    bottom: 3%;
+    left: 8%;
+  }
+  
+  .sideBar .sideBar-icon {
+    padding: 0 18%;
+  }
+  
+  .sideBar .sideBar-icon:not(:first-child) {
+    padding: 0 30%;
+    height: 30px;
+  }
+
+
+  @media screen and (max-width:992px) {
+    .sideBar{
+        &:hover{
+            width: 33%;
+            span{
+                display: flex;
+            }
+            .icon-ant{
+                margin: 0 10px;
+                span{
+                    margin-top: 50% ;
+                    width: 100%;
+                }
+            } 
+            p{
+                display: inline;
+                margin: auto 10px;
+            }
+           
+        }
+        
+        .icon-ant{
+            margin: 0;
+            span{
+                font-size: 15px;
+               
+                width: 100%;
+            }
+           
+        }
+       
+        
+    }
+    
+  }
+  @media screen and (max-width:512px) {
+    .sideBar{
+        &:hover{
+            width: 50%;
+        }
+
+    .rounded-full{
+        height: 80%;
+    }
+    }
+    
+  }
+    @media screen and (min-width:450px) {
+    .sideBar{
+        .rounded-full{
+            width: 30px;
+        }
+    }
+    
+  }

@@ -11,8 +11,9 @@ export default function DrawerComponent() {
     
     return (
         <Drawer
+            style={{maxWidth: '700px'}}
             title={title}
-            width={700}
+             width={'100%'}
             placement={placement}
             closable={true}
             onClose={() => {

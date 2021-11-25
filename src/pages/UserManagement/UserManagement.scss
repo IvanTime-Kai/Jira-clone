@@ -1,8 +1,40 @@
 .MuiPaper-root{
-    width: 80%;
+    margin-left: 22%;
+    width: 78%;
+    h3{
+        font-size: 3rem;
+    }
+    .MuiFormControl-root{
+        padding-left: 0;
+    }
 }
 .user__management{
     padding-bottom: 10%;
     position: absolute;
     
+}
+@media screen and (max-width: 992px){
+    .MuiPaper-root{
+        margin-left: 23%;
+        font-size: 13px;
+        width: 82%;
+       
+    }
+}
+@media screen and (max-width: 768px){
+    .MuiPaper-root{
+        width: 87%;
+        font-size: 10px;
+        margin-left: 12%;
+        h3{
+            font-size: 2rem;
+        }
+    }
+}
+@media screen and (max-width: 512px) {
+    .MuiPaper-root{
+        h3{
+            font-size: 1rem;
+        }
+    }
 }

@@ -12,19 +12,19 @@ class UserApis extends BaseServices{
     fetchAddUserInProject = (user) => {
         return this.post('Project/assignUserProject', user)
     }
-    fetchDeleteUserInProject = (user) => {
+    fetchDeleteUserInProject = (user) =>{
         return this.post('Project/removeUserFromProject', user)
     }
-    fetchGetUserByProjectId = (projectId) => {
+    fetchGetUserByProjectId = (projectId) =>{
         return this.get(`Users/getUserByProjectId?idProject=${projectId}`)
     }
-    fetchGet_AllUser = () => {
+    fetchGet_AllUser = () =>{
         return this.get('Users/getUser')
     }
     fetchCreateUser = (newUser) => {
         return this.post('Users/signup', newUser)
     }
-    fetchUpdateUser = (updateUser) =>{
+    fetchUpdateUser = (updateUser) => {
         return this.put('Users/editUser', updateUser)
     }
     fetchDeleteUser = (userId) => {

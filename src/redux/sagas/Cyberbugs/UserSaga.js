@@ -34,7 +34,14 @@ function * actSignIn(action){
         }
     }catch(err){
         console.log(err.response.data)
+        yield Swal.fire({
+            icon: 'error',
+            title: `${err.response.data.message}`,
+            showConfirmButton: false,
+            timer: 1500
+        })
     }
+    
 }
 
 function * GetAllUserApi(action){

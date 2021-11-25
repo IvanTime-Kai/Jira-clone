@@ -67,10 +67,10 @@ export default function UserManagement() {
     }, [])
     return (
         <MaterialTable
-            style={{with: '100%', fontSize : '16px',  marginBottom: '10%',position: 'relative'}}
+            style={{ fontSize : '16px',  marginBottom: '10%',position: 'absolute'}}
             className='user__management'
             icons={tableIcons}
-            title = {<h3 className="text-5xl text-blue-600 pb-3">User Management</h3>}
+            title = {<h3 className="text-blue-600 pb-3">User Manager</h3>}
             data = {data}
             columns={columns}
             options={{sorting : true, addRowPosition: 'last', actionsColumnIndex: -1, pageSize: 15, showFirstLastPageButtons : false, headerStyle : {fontSize: '22px', color: 'red'} }}
